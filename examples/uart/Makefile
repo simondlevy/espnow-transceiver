@@ -1,15 +1,16 @@
 SKETCH = $(shell basename "`pwd`")
 
-FQBN = esp32:esp32:m5stack_atom
-#FQBN = esp32:esp32:um_tinypico 
-#FQBN = esp32:esp32:XIAO_ESP32C6
+ROOT = $(HOME)/Desktop/
 
-PORT = /dev/ttyUSB0
+#FQBN = esp32:esp32:um_tinypico #D4:D4:DA:AA:31:DC 
+FQBN = esp32:esp32:XIAO_ESP32C6 # 54:32:04:33:0D:F0
+
+PORT = /dev/ttyACM0
 
 LIBS = $(HOME)/Documents/Arduino/libraries
 
 build: $(SKETCH).ino
-	arduino-cli compile --libraries $(LIBS) --libraries $(LIBS) \
+	arduino-cli compile --libraries $(LIBS) --libraries $(ROOT) \
 		--fqbn $(FQBN) $(SKETCH).ino
 
 flash:
