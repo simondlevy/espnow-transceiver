@@ -1,5 +1,5 @@
 /*
- * ESPNOW-Transponder sketch using UART
+ * ESPNOW-TRANSPONDER sketch using UART
  *
  * Copyright (C) 2026 Simon D. Levy
  *
@@ -18,7 +18,6 @@
 
 #include <espnow-transponder.h>
 
-// Change this to the MAC address of the other ESP32
 static const uint8_t PEER_ADDRESS[] = {0xD4,0xD4,0xDA,0x83,0x97,0x90};
 
 static HardwareSerial serial(1);

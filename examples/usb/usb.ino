@@ -1,5 +1,5 @@
 /*
- * ESPNOW-Transponder sketch using USB
+ * ESPNOW-TRANSPONDER sketch using USB serial
  *
  * Copyright (C) 2026 Simon D. Levy
  *
@@ -18,14 +18,13 @@
 
 #include <espnow-transponder.h>
 
-// Change this to the MAC address of the other ESP32
-static const uint8_t PEER_ADDRESS[] = {0x58,0xE6,0xC5,0x14,0x0A,0x24};
+static const uint8_t XIAO_ADDRESS[] = {0x58,0xE6,0xC5,0x14,0x0A,0x24};
 
 void setup()
 {
     Serial.begin(115200);
 
-    EspNowTransponder::begin(PEER_ADDRESS, &Serial);
+    EspNowTransponder::begin(XIAO_ADDRESS, &Serial);
 }
 
 void loop()
